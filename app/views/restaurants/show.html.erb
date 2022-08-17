@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="text-center"><%= @restaurant.name %></h1>
+  <div class="mt-5 w-50 mx-auto">
+    <p>
+      Address : <%= @restaurant.address %>
+    </p>
+    <p>
+      Phone number : <%= @restaurant.phone_number %>
+    </p>
+    <p>
+      Category : <%= @restaurant.category %>
+    </p>
+
+    <br>
+    <p><strong>Reviews</strong></p>
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %></li>
+      <% end %>
+    </ul>
+    <br>
+    <div class="d-flex justify-content-around">
+      <%= link_to 'Add review',  new_restaurant_review_path(@restaurant), :class => "btn btn-primary" %>
+      <%= link_to 'Go back to Restaurants index', restaurants_path, :class => "btn btn-primary" %>
+    </div>
+  </div>
+</div>
