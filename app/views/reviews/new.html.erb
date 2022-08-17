@@ -2,11 +2,7 @@
   <h1 class="text-center">Create your restaurant</h1>
   <div class="mt-5 w-50 mx-auto">
     <h1>New review</h1>
-    <%= simple_form_for [@restaurant, @review] do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating, collection: 0..5 %>
-      <%= f.submit "Submit review", class: "btn btn-primary" %>
-    <% end %>
+    <%= render 'form', review: @review %>
     <%= link_to 'Go back to Restaurants index', restaurants_path, :class => "btn btn-primary mt-5" %>
   </div>
 </div>
